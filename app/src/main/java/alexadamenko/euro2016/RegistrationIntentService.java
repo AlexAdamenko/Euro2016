@@ -23,6 +23,7 @@ public class RegistrationIntentService extends IntentService {
     private static final String BASE_URL = "http://192.168.0.10:3000/post";
     private static final String USER_AGENT = "Mozilla/5.0";
     private static String POST_PARAMS = " ";
+    private Boolean sendMessage = true;
 
     public RegistrationIntentService() {
         super(TAG);
@@ -52,6 +53,7 @@ public class RegistrationIntentService extends IntentService {
 
     public void postData(String token) throws IOException {
 
+        if(sendMessage){
         URL url = new URL(BASE_URL);
         HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
         httpCon.setDoOutput(true);
@@ -62,6 +64,8 @@ public class RegistrationIntentService extends IntentService {
         System.out.println(httpCon.getResponseCode());
         System.out.println(httpCon.getResponseMessage());
         out.close();
+        sendMessage=false;
+    }
     }
 
 }

@@ -2,5 +2,6 @@
     <string name="app_name">Euro2016</string>
     <string name="gcm_defaultSenderId">652478271931</string>
     <string name="messageFlag">false</string>
+    <string name="my_love_text">I love you</string>
 
 </resources>

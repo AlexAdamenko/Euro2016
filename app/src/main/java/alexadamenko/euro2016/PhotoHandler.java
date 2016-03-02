@@ -1,8 +1,8 @@
 package alexadamenko.euro2016;
 
-import android.content.Intent;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
+        import android.content.Intent;
+        import android.provider.MediaStore;
+        import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by AlexAdamenko on 3/2/2016.
