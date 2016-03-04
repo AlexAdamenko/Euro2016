@@ -3,5 +3,6 @@
     <string name="gcm_defaultSenderId">652478271931</string>
     <string name="messageFlag">false</string>
     <string name="my_love_text">I love you</string>
+    <string name="self_destruct">test</string>
 
 </resources>
