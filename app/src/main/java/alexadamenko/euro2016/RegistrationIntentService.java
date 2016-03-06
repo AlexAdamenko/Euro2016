@@ -20,7 +20,7 @@ public class RegistrationIntentService extends IntentService {
 
     // abbreviated tag name
     private static final String TAG = "RegIntentService";
-    private static final String BASE_URL = "http://52.10.242.85:8080/post       ";
+    private static final String BASE_URL = "http://192.168.0.10:3000/post";
     private static final String USER_AGENT = "Mozilla/5.0";
     private static String POST_PARAMS = " ";
     private Boolean sendMessage = true;

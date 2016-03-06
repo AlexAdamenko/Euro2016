@@ -1,7 +1,9 @@
 package alexadamenko.euro2016;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        final Intent i1 = new Intent(this, MyInstanceIDListenerService.class);
+        final Intent i2 = new Intent(this, RegistrationIntentService.class);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -29,13 +34,21 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Reading all contacts..");
         List<Game> games = dbHelper.getAllGames();
 
-        LinearLayout LinearLayoutView = new LinearLayout(this);
+        final LinearLayout LinearLayoutView = new LinearLayout(this);
         TextView DisplayStringArray = new TextView(this);
         DisplayStringArray.setTextSize(25);
-        Button button = new Button(this);
+        final Button button = new Button(this);
         button.setText("Sub");
         LinearLayoutView.addView(DisplayStringArray);
         LinearLayoutView.addView(button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startService(i1);
+                startService(i2);
+                LinearLayoutView.removeView(button);
+            }
+        });
 
         for (Game cn : games){
 
@@ -43,18 +56,9 @@ public class MainActivity extends AppCompatActivity {
             {
                 DisplayStringArray.append(cn.getFirst_player() + " VS " + cn.getSecond_player());
                 DisplayStringArray.append("\n");
-                //subscribe.setVisibility(View.VISIBLE);
             }
 
         dbHelper.deleteAll();
-
-
-        //Intent i1 = new Intent(this, MyInstanceIDListenerService.class);
-        //Intent i2 = new Intent(this, RegistrationIntentService.class);
-
-        //startService(i1);
-       // startService(i2);
-
         setContentView(LinearLayoutView);
 
 
