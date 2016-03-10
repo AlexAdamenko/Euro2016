@@ -33,6 +33,8 @@ public class RegistrationIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+
+
         // Make a call to Instance API
         InstanceID instanceID = InstanceID.getInstance(this);
         String senderId = getResources().getString(R.string.gcm_defaultSenderId);
@@ -40,6 +42,9 @@ public class RegistrationIntentService extends IntentService {
             // request token that will be used by the server to send push notifications
             String token = instanceID.getToken(senderId, GoogleCloudMessaging.INSTANCE_ID_SCOPE);
             Log.d(TAG, "GCM Registration Token: " + token);
+            final SharedPreferences.Editor editor =getSharedPreferences(PREFS_NAME,MODE_PRIVATE).edit();
+            editor.putString("token", token);
+            editor.commit();
 
             // pass along this data
             sendRegistrationToServer(token);
@@ -50,10 +55,9 @@ public class RegistrationIntentService extends IntentService {
 
     private void sendRegistrationToServer(String token) throws IOException {
 
-        final SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+
         postData(token);
-        editor.putString("token", token);
-        editor.commit();
+
 
 
     }

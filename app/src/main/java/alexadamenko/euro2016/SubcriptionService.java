@@ -42,7 +42,7 @@ public class SubcriptionService{
         URL url = new URL(BASE_URL);
         HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
         httpCon.setDoOutput(true);
-        httpCon.setRequestProperty("Token", "caQ73plnhss:APA91bHirQfWpO2nyS2ptZjjoGyXpXsGYwRVe8hU1wTv0Nm-roLjk46AHCBzz3h-JNXVIzIj4ChtQ-nIrV16FtClkf2cvqsYZWzBHepi1aHn-kdP_HQiVvTRusZzImsF_hfQPuGQABM5");
+        httpCon.setRequestProperty("Token", token);
         httpCon.setRequestProperty("Game", game);
         httpCon.setRequestMethod("POST");
         OutputStreamWriter out = new OutputStreamWriter(

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     LinearLayoutView.removeView(button);
-                    editor.putString("game", "RussiaVSAustria");
+                    editor.putString("game", "GAME");
                     editor.putBoolean("subbed", true);
                     editor.commit();
                     try {
