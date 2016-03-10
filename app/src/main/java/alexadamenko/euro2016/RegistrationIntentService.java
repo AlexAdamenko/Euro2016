@@ -2,6 +2,7 @@ package alexadamenko.euro2016;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -19,11 +20,12 @@ import java.net.URL;
 public class RegistrationIntentService extends IntentService {
 
     // abbreviated tag name
+    private static final String PREFS_NAME = "EURO_PREFS";
     private static final String TAG = "RegIntentService";
     private static final String BASE_URL = "http://192.168.0.10:3000/post";
-    private static final String USER_AGENT = "Mozilla/5.0";
-    private static String POST_PARAMS = " ";
     private Boolean sendMessage = true;
+
+
 
     public RegistrationIntentService() {
         super(TAG);
@@ -47,7 +49,12 @@ public class RegistrationIntentService extends IntentService {
     }
 
     private void sendRegistrationToServer(String token) throws IOException {
+
+        final SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
         postData(token);
+        editor.putString("token", token);
+        editor.commit();
+
 
     }
 
@@ -57,7 +64,7 @@ public class RegistrationIntentService extends IntentService {
         URL url = new URL(BASE_URL);
         HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
         httpCon.setDoOutput(true);
-        httpCon.setRequestProperty ("Token", token);
+        httpCon.setRequestProperty("Token", token);
         httpCon.setRequestMethod("POST");
         OutputStreamWriter out = new OutputStreamWriter(
                 httpCon.getOutputStream());
