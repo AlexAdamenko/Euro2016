@@ -54,12 +54,7 @@ public class RegistrationIntentService extends IntentService {
     }
 
     private void sendRegistrationToServer(String token) throws IOException {
-
-
         postData(token);
-
-
-
     }
 
     public void postData(String token) throws IOException {

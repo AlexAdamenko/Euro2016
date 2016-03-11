@@ -1,0 +1,292 @@
+{
+  "matches":[
+    {
+      "game_id": "FRvRM",
+      "first_player": "France",
+      "second_player": "Romania",
+      "date": "10.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "ALvSW",
+      "first_player": "Albania",
+      "second_player": "Switzerland",
+      "date": "11.06.2016",
+      "time": "15:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "WLvSL",
+      "first_player": "Wales",
+      "second_player": "Slovakia",
+      "date": "11.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "ENvRU",
+      "first_player": "England",
+      "second_player": "Russia",
+      "date": "11.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "TUvCR",
+      "first_player": "Turkey",
+      "second_player": "Croatia",
+      "date": "12.06.2016",
+      "time": "15:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "PLvNI",
+      "first_player": "Poland",
+      "second_player": "NorthernIreland",
+      "date": "12.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "DEvUA",
+      "first_player": "Germany",
+      "second_player": "Ukraine",
+      "date": "12.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "SPvCZ",
+      "first_player": "Spain",
+      "second_player": "Czech Republic",
+      "date": "13.06.2016",
+      "time": "15:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "RoIvSW",
+      "first_player": "Republic of Ireland",
+      "second_player": "Sweden",
+      "date": "13.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "BGvIT",
+      "first_player": "Belgium",
+      "second_player": "Italy",
+      "date": "13.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "AUvHU",
+      "first_player": "Austria",
+      "second_player": "Hungary",
+      "date": "14.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "PRvIC",
+      "first_player": "Portugal",
+      "second_player": "Iceland",
+      "date": "14.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "RUvSL",
+      "first_player": "Russia",
+      "second_player": "Slovakia",
+      "date": "15.06.2016",
+      "time": "15:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "RMcSW",
+      "first_player": "Romania",
+      "second_player": "Switzerland",
+      "date": "15.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "FRvAL",
+      "first_player": "France",
+      "second_player": "Albania",
+      "date": "15.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "ENvWL",
+      "first_player": "England",
+      "second_player": "Wales",
+      "date": "16.06.2016",
+      "time": "15:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "UAvNI",
+      "first_player": "Ukraine",
+      "second_player": "Northern Ireland",
+      "date": "16.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "DEvPL",
+      "first_player": "Germany",
+      "second_player": "Poland",
+      "date": "16.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "ITvSWE",
+      "first_player": "Italy",
+      "second_player": "Sweden",
+      "date": "17.06.2016",
+      "time": "15:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "CZvCR",
+      "first_player": "Czech Republic",
+      "second_player": "Croatia",
+      "date": "17.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "SPvTU",
+      "first_player": "Spain",
+      "second_player": "Turkey",
+      "date": "17.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "BGvRoI",
+      "first_player": "Belgium",
+      "second_player": "Republic of Ireland",
+      "date": "18.06.2016",
+      "time": "15:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "ICvHU",
+      "first_player": "Iceland",
+      "second_player": "Hungary",
+      "date": "18.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "PRvAU",
+      "first_player": "Portugal",
+      "second_player": "Austria",
+      "date": "18.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "SWvFR",
+      "first_player": "Switzerland",
+      "second_player": "France",
+      "date": "19.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "RMvAL",
+      "first_player": "Romania",
+      "second_player": "Albania",
+      "date": "19.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "SLvEN",
+      "first_player": "Slovakia",
+      "second_player": "England",
+      "date": "20.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "RUvWL",
+      "first_player": "Russia",
+      "second_player": "Wales",
+      "date": "20.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "NIvDE",
+      "first_player": "Northern Ireland",
+      "second_player": "Germany",
+      "date": "21.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "UAvPL",
+      "first_player": "Ukraine",
+      "second_player": "Poland",
+      "date": "21.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "CRvSP",
+      "first_player": "Croatia",
+      "second_player": "Spain",
+      "date": "21.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "CZvTU",
+      "first_player": "Czech Republic",
+      "second_player": "Turkey",
+      "date": "21.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "ICvAU",
+      "first_player": "Iceland",
+      "second_player": "Austria",
+      "date": "22.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "HUvPR",
+      "first_player": "Hungary",
+      "second_player": "Portugal",
+      "date": "22.06.2016",
+      "time": "18:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "SWvBG",
+      "first_player": "Sweden",
+      "second_player": "Belguim",
+      "date": "22.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    },
+    {
+      "game_id": "ITvRoI",
+      "first_player": "Italy",
+      "second_player": "Republic of Ireland",
+      "date": "22.06.2016",
+      "time": "21:00",
+      "stage": "group"
+    }
+  ]
+}

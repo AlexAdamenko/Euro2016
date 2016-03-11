@@ -1,6 +1,5 @@
 package alexadamenko.euro2016;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.StrictMode;
@@ -19,11 +18,11 @@ public class SubcriptionService{
     private static final String PREFS_NAME = "EURO_PREFS";
     private static final String BASE_URL = "http://192.168.0.10:3000/update";
     private static final String TAG = "RegIntentService";
-    Activity mainActivity;
+    Context context;
 
-    public SubcriptionService(MainActivity mainActivity) {
+    public SubcriptionService(Context context) {
 
-        this.mainActivity = mainActivity;
+        this.context = context;
 
     }
 
@@ -33,7 +32,7 @@ public class SubcriptionService{
         StrictMode.setThreadPolicy(policy);
 
 
-        SharedPreferences prefs = mainActivity.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
         String token = prefs.getString("token", "No token provided");
         String game = prefs.getString("game", "No game selected");
 
