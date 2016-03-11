@@ -1,4 +1,4 @@
-package alexadamenko.euro2016;
+package alexadamenko.euro2016.CameraHandler;
 
 import android.app.Service;
 import android.content.Context;

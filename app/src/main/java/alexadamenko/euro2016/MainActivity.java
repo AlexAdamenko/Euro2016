@@ -17,6 +17,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import alexadamenko.euro2016.DB.DBHelper;
+import alexadamenko.euro2016.DB.Models.Game;
+import alexadamenko.euro2016.IntentServices.MyInstanceIDListenerService;
+import alexadamenko.euro2016.IntentServices.RegistrationIntentService;
+import alexadamenko.euro2016.IntentServices.SubcriptionService;
+
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
@@ -60,52 +66,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
-        /*Boolean subbed = prefs.getBoolean("subbed", false);
-
-                final LinearLayout LinearLayoutView = new LinearLayout(this);
-        TextView DisplayStringArray = new TextView(this);
-        DisplayStringArray.setTextSize(25);
-        LinearLayoutView.addView(DisplayStringArray);
-
-        if(!subbed) {
-            final Button button = new Button(this);
-            button.setText("Sub");
-            LinearLayoutView.addView(button);
-
-            button.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    LinearLayoutView.removeView(button);
-                    editor.putString("game", "GAME");
-                    editor.putBoolean("subbed", true);
-                    editor.commit();
-                    try {
-                        subService.subscribe();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-        }
-
-
-         final Button clearPrefs = new Button(this);
-         clearPrefs.setText("clearPrefs");
-         LinearLayoutView.addView(clearPrefs);
-
-        clearPrefs.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                editor.clear();
-                editor.commit();
-           }
-       });*/
-
-
-
 
     class DataFetcherTask extends AsyncTask<Void,Void,Void> {
 

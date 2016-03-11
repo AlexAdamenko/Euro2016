@@ -1,4 +1,4 @@
-package alexadamenko.euro2016;
+package alexadamenko.euro2016.DB;
 
 
 import android.content.ContentValues;
@@ -10,6 +10,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import alexadamenko.euro2016.DB.Models.Game;
 
 /**
  * Created by AlexAdamenko on 3/4/2016.
@@ -77,6 +79,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(KEY_STAGE,value);
         db.update(TABLE_CONTACTS, cv, "game_id=" + "'" + id + "'", null);
+        db.close();
     }
 
     public List<Game> getAllGames() {
@@ -100,6 +103,7 @@ public class DBHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+        db.close();
         return gamesList;
     }
 
@@ -124,6 +128,7 @@ public class DBHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+        db.close();
         return gamesListOnDay;
     }
 }

@@ -1,4 +1,4 @@
-package alexadamenko.euro2016;
+package alexadamenko.euro2016.IntentServices;
 
 import android.content.Intent;
 

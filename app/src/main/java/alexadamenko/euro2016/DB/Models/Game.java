@@ -1,4 +1,4 @@
-package alexadamenko.euro2016;
+package alexadamenko.euro2016.DB.Models;
 
 /**
  * Created by AlexAdamenko on 3/4/2016.

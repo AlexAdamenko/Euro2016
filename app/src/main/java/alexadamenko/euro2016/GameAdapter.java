@@ -12,6 +12,10 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.List;
 
+import alexadamenko.euro2016.DB.DBHelper;
+import alexadamenko.euro2016.DB.Models.Game;
+import alexadamenko.euro2016.IntentServices.SubcriptionService;
+
 /**
  * Created by AlexAdamenko on 3/11/2016.
  */
