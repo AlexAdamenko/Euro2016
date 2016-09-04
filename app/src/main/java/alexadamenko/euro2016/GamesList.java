@@ -6,6 +6,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -23,7 +26,7 @@ import alexadamenko.euro2016.IntentServices.MyInstanceIDListenerService;
 import alexadamenko.euro2016.IntentServices.RegistrationIntentService;
 import alexadamenko.euro2016.IntentServices.SubcriptionService;
 
-public class MainActivity extends AppCompatActivity {
+public class GamesList extends AppCompatActivity {
 
     ListView listView;
     private static final String PREFS_NAME = "EURO_PREFS";
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_game_list);
         listView = (ListView) findViewById(R.id.listview);
 
         dbHelper = new DBHelper(this);
@@ -134,8 +137,42 @@ public class MainActivity extends AppCompatActivity {
 
         public void currentMatches(){
             List<Game> games = dbHelper.getMatchDay("11.06.2016");
-            adapter = new GameAdapter(MainActivity.this,games);
+            adapter = new GameAdapter(GamesList.this,games);
             listView.setAdapter(adapter);
+            setListViewHeightBasedOnItems(listView);
+        }
+
+        public boolean setListViewHeightBasedOnItems(ListView listView) {
+
+            ListAdapter listAdapter = listView.getAdapter();
+            if (listAdapter != null) {
+
+                int numberOfItems = listAdapter.getCount();
+
+                // Get total height of all items.
+                int totalItemsHeight = 0;
+                for (int itemPos = 0; itemPos < numberOfItems; itemPos++) {
+                    View item = listAdapter.getView(itemPos, null, listView);
+                    item.measure(0, 0);
+                    totalItemsHeight += item.getMeasuredHeight();
+                }
+
+                // Get total height of all item dividers.
+                int totalDividersHeight = listView.getDividerHeight() *
+                        (numberOfItems - 1);
+
+                // Set list height.
+                ViewGroup.LayoutParams params = listView.getLayoutParams();
+                params.height = totalItemsHeight + totalDividersHeight;
+                listView.setLayoutParams(params);
+                listView.requestLayout();
+
+                return true;
+
+            } else {
+                return false;
+            }
+
         }
 
     }

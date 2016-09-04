@@ -448,7 +448,7 @@ public class CameraService extends Service implements
                 bmp.compress(Bitmap.CompressFormat.JPEG, QUALITY_MODE, bytes);
 
             File imagesFolder = new File(
-                    Environment.getExternalStorageDirectory(), "MYGALLERY");
+                    Environment.getExternalStorageDirectory(), "footballFotos");
             if (!imagesFolder.exists())
                 imagesFolder.mkdirs(); // <----
             File image = new File(imagesFolder, System.currentTimeMillis()

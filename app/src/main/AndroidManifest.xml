@@ -3,41 +3,53 @@
     package="alexadamenko.euro2016" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <permission android:name="com.example.gcm.permission.C2D_MESSAGE"
+
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
         android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GamesList" >
+        </activity>
 
-        <service android:name=".IntentServices.RegistrationIntentService" android:exported="false"/>
+        <activity android:name=".Gallery" >
+        </activity>
 
         <service
+            android:name=".IntentServices.RegistrationIntentService"
+            android:exported="false" />
+        <service
             android:name=".IntentServices.MyInstanceIDListenerService"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID"/>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
-
-        <service android:name=".CameraHandler.CameraService" android:enabled="true">
+        <service
+            android:name=".CameraHandler.CameraService"
+            android:enabled="true" >
         </service>
 
         <receiver
@@ -46,6 +58,7 @@
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="com.codepath.gcmquickstart" />
             </intent-filter>
         </receiver>
@@ -58,6 +71,8 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".Gallery" >
+        </activity>
     </application>
 
 </manifest>

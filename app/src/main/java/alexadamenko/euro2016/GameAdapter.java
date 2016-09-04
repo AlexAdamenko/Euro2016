@@ -25,7 +25,6 @@ public class GameAdapter  extends BaseAdapter {
 
     Context context;
     List<Game> listData;
-    Boolean subbed;
     DBHelper dbHelper;
 
     public GameAdapter(Context context,List<Game> listData){
@@ -48,7 +47,9 @@ public class GameAdapter  extends BaseAdapter {
         return position;
     }
     class ViewHolder {
-        private TextView textViewCityName;
+        private TextView firstTeam;
+        private TextView secondTeam;
+        private TextView gameDate;
     }
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
@@ -57,7 +58,9 @@ public class GameAdapter  extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.game_item,null);
             viewHolder = new ViewHolder();
-            viewHolder.textViewCityName = (TextView) view.findViewById(R.id.txtViewGameName);
+            viewHolder.firstTeam = (TextView) view.findViewById(R.id.firstTeam);
+            viewHolder.secondTeam = (TextView) view.findViewById(R.id.secondTeam);
+            viewHolder.gameDate = (TextView) view.findViewById(R.id.date);
             view.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) view.getTag();
@@ -65,12 +68,17 @@ public class GameAdapter  extends BaseAdapter {
 
         dbHelper = new DBHelper(context);
         final Button sub_btn = (Button)view.findViewById(R.id.sub_btn);
+        final TextView subbed = (TextView)view.findViewById(R.id.subbed);
         Game game = listData.get(position);
         if(game.getStage().equals("1")){
             sub_btn.setVisibility(View.INVISIBLE);
         }
-        final String gameTitle = game.getFirst_player()+ " vs " + game.getSecond_player();
-        viewHolder.textViewCityName.setText(gameTitle);
+        final String firstTeam = game.getFirst_player();
+        final String secondTeam = game.getSecond_player();
+        final String gameDate = game.getDate();
+        viewHolder.firstTeam.setText(firstTeam);
+        viewHolder.secondTeam.setText(secondTeam);
+        viewHolder.gameDate.setText(gameDate);
 
         sub_btn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -80,7 +88,7 @@ public class GameAdapter  extends BaseAdapter {
                 SharedPreferences.Editor editor = context.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE).edit();
                 editor.putString("game", game.getGame_id());//or some other task
                 editor.commit();
-                dbHelper.updateValue(game.getGame_id(),"1");
+                dbHelper.updateValue(game.getGame_id(), "1");
                 sub_btn.setVisibility(View.INVISIBLE);
                 final SubcriptionService subService = new SubcriptionService(context);
                 try {
